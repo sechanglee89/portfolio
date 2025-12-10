@@ -5,11 +5,40 @@ import { Button } from "../ui/button";
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
+
+      // Check which section is currently in view
+      const sections = ["profile", "blice", "green", "others", "contact"];
+      const scrollPosition = window.scrollY + 100; // offset for better UX
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+
+      // If near bottom of page, activate contact section
+      if (scrollPosition + windowHeight >= documentHeight - 100) {
+        setActiveSection("contact");
+        return;
+      }
+
+      for (const sectionId of sections) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (
+            scrollPosition >= offsetTop &&
+            scrollPosition < offsetTop + offsetHeight
+          ) {
+            setActiveSection(sectionId);
+            break;
+          }
+        }
+      }
     };
+
+    handleScroll(); // Initial check
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -56,14 +85,21 @@ export function Navigation() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+                className={`text-sm font-medium transition-colors relative ${
+                  activeSection === item.id
+                    ? "text-primary font-semibold"
+                    : "text-muted-foreground hover:text-primary"
+                }`}
               >
                 {item.label}
+                {activeSection === item.id && (
+                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full" />
+                )}
               </button>
             ))}
-            <Button size="sm" onClick={() => scrollToSection("contact")}>
+            {/* <Button size="sm" onClick={() => scrollToSection("contact")}>
               Contact Me
-            </Button>
+            </Button> */}
           </div>
 
           {/* Mobile Menu Button */}
@@ -90,7 +126,11 @@ export function Navigation() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted"
+                className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                  activeSection === item.id
+                    ? "text-primary bg-primary/10 font-semibold"
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                }`}
               >
                 {item.label}
               </button>

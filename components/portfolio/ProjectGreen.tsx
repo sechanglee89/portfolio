@@ -42,34 +42,54 @@ export function ProjectGreen() {
                 <div>
                   <h4 className="font-semibold mb-2">Role</h4>
                   <p className="text-sm text-muted-foreground">
-                    백엔드 리드 개발 + 인프라/보안 설계
+                    백엔드 리드 개발, 인프라/보안 설계
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-2">Tech Stack</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {[
-                      "Kotlin 2.2.10",
-                      "Spring Boot 3.5.5",
-                      "Spring Security 6.5.x",
-                      "Spring Data JPA 3.5.x",
-                      "Vue 3.5.x",
-                      "Vite 7.x",
-                      "TypeScript 5.8.x",
-                      "Tailwind CSS 4.1.x",
-                      "TailAdmin 2.2",
-                      "MariaDB 11.8.3",
-                      "Redis 7.x",
-                      "Docker",
-                      "AWS Lightsail",
-                      "Nginx",
-                      "Grafana",
-                      "Loki",
-                    ].map((tech) => (
-                      <Badge key={tech} variant="secondary">
-                        {tech}
+                  <h4 className="font-semibold mb-2">Tech Highlights</h4>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex items-center gap-2">
+                      <Badge variant="secondary" className="shrink-0">
+                        Backend
                       </Badge>
-                    ))}
+                      <span className="text-muted-foreground text-slate-800">
+                        Kotlin 2.2.x · Spring Boot 3.5.x · Spring Data JPA ·
+                        Spring Security
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Badge variant="secondary" className="shrink-0">
+                        Infra/DB
+                      </Badge>
+                      <span className="text-muted-foreground text-slate-800">
+                        MariaDB 11.x · Redis 7.x · Docker · AWS Lightsail ·
+                        Nginx
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Badge variant="secondary" className="shrink-0">
+                        Frontend
+                      </Badge>
+                      <span className="text-muted-foreground text-slate-800">
+                        Vue 3.5.x · TypeScript · Vite · Tailwind CSS · TailAdmin
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Badge variant="secondary" className="shrink-0">
+                        CI/CD
+                      </Badge>
+                      <span className="text-muted-foreground text-slate-800">
+                        GitHub Actions (Docker 빌드·배포)
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Badge variant="secondary" className="shrink-0">
+                        Monitoring
+                      </Badge>
+                      <span className="text-muted-foreground text-slate-800">
+                        Grafana · Loki
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -101,13 +121,13 @@ export function ProjectGreen() {
             </div>
 
             <div className="flex-1 w-full">
-              <div className="rounded-xl overflow-hidden shadow-lg border bg-white dark:bg-gray-900 aspect-video relative">
+              <div className="rounded-xl overflow-hidden shadow-2xl border bg-white dark:bg-gray-900 relative group">
                 <img
-                  src="https://images.unsplash.com/photo-1509391366360-2e959784a276?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+                  src="/public/images/projects/kogreen-main.jpg"
                   alt="Solar Energy Plant"
-                  className="w-full h-full object-cover"
+                  className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+                <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity">
                   <Badge className="bg-green-600 text-white">
                     태양광 에너지 솔루션
                   </Badge>
@@ -148,11 +168,11 @@ export function ProjectGreen() {
                     <div>
                       <h3 className="font-semibold text-sm">백엔드</h3>
                       <ul className="list-hanging text-muted-foreground mt-1 text-xs space-y-0.5">
-                        <li>• Kotlin 2.2.10</li>
-                        <li>• Spring Boot 3.5.5</li>
-                        <li>• Spring Security 6.5.x</li>
+                        <li>• Kotlin 2.2.x</li>
+                        <li>• Spring Boot 3.5.x</li>
                         <li>• Spring Data JPA 3.5.x</li>
-                        <li>• Gradle 9.0.0</li>
+                        <li>• Spring Security 6.5.x</li>
+                        <li>• Gradle 9.0.x</li>
                       </ul>
                     </div>
                   </div>
@@ -166,10 +186,10 @@ export function ProjectGreen() {
                       <h3 className="font-semibold text-sm">프론트엔드</h3>
                       <ul className="list-hanging text-muted-foreground mt-1 text-xs space-y-0.5">
                         <li>• Vue 3.5.x</li>
-                        <li>• TypeScript</li>
+                        <li>• TypeScript 5.7.x</li>
                         <li>• Vite 7.x</li>
-                        <li>• Tailwind CSS 4.1.x</li>
-                        <li>• TailAdmin 2.2</li>
+                        <li>• Tailwind CSS 4.x</li>
+                        <li>• TailAdmin 2.x</li>
                       </ul>
                     </div>
                   </div>
@@ -184,8 +204,8 @@ export function ProjectGreen() {
                       <ul className="list-hanging text-muted-foreground mt-1 text-xs space-y-0.5">
                         <li>• Docker / Compose</li>
                         <li>• AWS Lightsail</li>
-                        <li>• S3 + CloudFront</li>
                         <li>• Nginx</li>
+                        <li>• S3 + CloudFront</li>
                       </ul>
                     </div>
                   </div>
@@ -215,7 +235,6 @@ export function ProjectGreen() {
                       <ul className="list-hanging text-muted-foreground mt-1 text-xs space-y-0.5">
                         <li>• Grafana</li>
                         <li>• Loki / Promtail</li>
-                        <li>• Prometheus</li>
                       </ul>
                     </div>
                   </div>
@@ -459,14 +478,23 @@ export function ProjectGreen() {
                     </div>
                     <ul className="list-hanging text-xs text-muted-foreground space-y-1">
                       <li>
-                        • 고위험 POST/PUT/DELETE는{" "}
-                        <strong>Turnstile 챌린지 통과 후 발급된 토큰</strong>을
-                        헤더에 포함해야 통과
+                        • 크리티컬·이상 패턴이 감지된 POST/PUT/DELETE 요청에
+                        한해 <strong>Turnstile 챌린지를 요구</strong> (일반
+                        요청은 챌린지 없이 처리)
                       </li>
                       <li>
-                        • 토큰은 <strong>단일 사용·짧은 만료시간</strong> 적용
+                        • Turnstile 검증 성공 시{" "}
+                        <strong>
+                          단일 사용·짧은 만료시간의 내부 챌린지 토큰
+                        </strong>
+                        을 발급하고, 보호 API 호출 시 헤더로 전달
                       </li>
-                      <li>• 서버에서 Siteverify API를 통해 검증</li>
+                      <li>
+                        • 챌린지 토큰 발급 시 서버에서{" "}
+                        <strong>
+                          Siteverify API로 Turnstile 응답 토큰을 검증
+                        </strong>
+                      </li>
                     </ul>
                   </div>
 
@@ -553,73 +581,308 @@ export function ProjectGreen() {
                         <strong>AES-GCM 암호화 + 검색용 해시 분리</strong> 저장
                       </li>
                       <li>
-                        • 자주 조회되는 정적 텍스트(회사 정보, 코드 테이블)는
+                        • 자주 조회되는 정적 텍스트(회사 정보, 코드 테이블 등)는
                         Redis에 캐싱, 만료 정책으로 동기화
                       </li>
                     </ul>
                   </div>
                 </div>
 
-                {/* 인증 플로우 다이어그램 */}
-                <div className="mt-8 p-6 bg-slate-900 rounded-xl text-white">
-                  <h4 className="text-sm font-semibold mb-4 text-gray-300">
-                    관리자 로그인 인증 플로우
-                  </h4>
-                  <div className="flex flex-wrap items-center justify-center gap-2 text-xs">
-                    <div className="bg-blue-600 px-3 py-2 rounded">
-                      ID/PW + TOTP 입력
+                {/* 보안 플로우 다이어그램 */}
+                <div className="mt-8 space-y-4">
+                  {/* 관리자 로그인 인증 플로우 */}
+                  <div className="bg-slate-900 rounded-xl p-6 text-white relative overflow-x-auto">
+                    <div className="absolute top-2 right-3 opacity-50 text-xs">
+                      Admin Authentication Flow
                     </div>
-                    <span className="text-gray-500">→</span>
-                    <div className="bg-red-600 px-3 py-2 rounded">
-                      IP 차단 확인
-                    </div>
-                    <span className="text-gray-500">→</span>
-                    <div className="bg-orange-600 px-3 py-2 rounded">
-                      Turnstile 검증
-                    </div>
-                    <span className="text-gray-500">→</span>
-                    <div className="bg-purple-600 px-3 py-2 rounded">
-                      Bcrypt 비밀번호 검증
-                    </div>
-                    <span className="text-gray-500">→</span>
-                    <div className="bg-green-600 px-3 py-2 rounded">
-                      TOTP 검증
-                    </div>
-                    <span className="text-gray-500">→</span>
-                    <div className="bg-teal-600 px-3 py-2 rounded">
-                      JWT 발급 (Access + Refresh)
+                    <h4 className="text-sm font-semibold mb-4 text-gray-300">
+                      관리자 로그인 인증 플로우
+                    </h4>
+                    <div className="min-w-[900px]">
+                      <div className="flex items-center gap-3 text-[11px]">
+                        <div className="border border-gray-600 rounded-lg p-3 bg-gray-800/50 w-32">
+                          <div className="text-[9px] text-gray-400 mb-1">
+                            시작
+                          </div>
+                          <div className="bg-blue-600 px-3 py-2 rounded text-center">
+                            ID·PW 입력
+                          </div>
+                        </div>
+                        <div className="text-gray-400">→</div>
+                        <div className="border border-gray-600 rounded-lg p-3 bg-gray-800/50 w-40">
+                          <div className="text-[9px] text-gray-400 mb-1">
+                            보안 검증
+                          </div>
+                          <div className="space-y-1.5">
+                            <div className="bg-gray-700 px-3 py-1.5 rounded text-center text-[10px]">
+                              IP 차단 / Rate Limit 확인
+                            </div>
+                            <div className="text-[9px] text-red-400 text-center">
+                              차단 시 → 거부 + 보안 로그
+                            </div>
+                          </div>
+                        </div>
+                        <div className="text-gray-400">→</div>
+                        <div className="border border-gray-600 rounded-lg p-3 bg-gray-800/50 w-36">
+                          <div className="text-[9px] text-gray-400 mb-1">
+                            1차 인증
+                          </div>
+                          <div className="space-y-1.5">
+                            <div className="bg-gray-700 px-3 py-1.5 rounded text-center text-[10px]">
+                              Bcrypt 비밀번호 검증
+                            </div>
+                            <div className="text-[9px] text-red-400 text-center">
+                              불일치 → 실패 횟수↑, 계정 잠금
+                            </div>
+                          </div>
+                        </div>
+                        <div className="text-gray-400">→</div>
+                        <div className="border border-gray-600 rounded-lg p-3 bg-gray-800/50 w-40">
+                          <div className="text-[9px] text-gray-400 mb-1">
+                            2차 인증
+                          </div>
+                          <div className="space-y-1.5">
+                            <div className="bg-gray-700 px-3 py-1.5 rounded text-center text-[10px]">
+                              TOTP 검증
+                            </div>
+                            <div className="text-[9px] text-red-400 text-center">
+                              불일치 → 거부 + 실패 횟수↑
+                            </div>
+                          </div>
+                        </div>
+                        <div className="text-gray-400">→</div>
+                        <div className="border border-gray-600 rounded-lg p-3 bg-gray-800/50 w-32">
+                          <div className="text-[9px] text-gray-400 mb-1">
+                            완료
+                          </div>
+                          <div className="space-y-1.5">
+                            <div className="bg-green-700 px-3 py-1.5 rounded text-center text-[10px]">
+                              JWT 토큰 발급
+                            </div>
+                            <div className="text-[9px] text-green-400 text-center">
+                              HttpOnly·Secure Cookie
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                {/* Rate Limit 플로우 다이어그램 */}
-                <div className="mt-4 p-6 bg-slate-900 rounded-xl text-white">
-                  <h4 className="text-sm font-semibold mb-4 text-gray-300">
-                    사용자 API Rate Limit 플로우
-                  </h4>
-                  <div className="flex flex-wrap items-center justify-center gap-2 text-xs">
-                    <div className="bg-blue-600 px-3 py-2 rounded">
-                      API 요청
+                  {/* 사용자 API Rate Limit 플로우 */}
+                  <div className="bg-slate-900 rounded-xl p-6 text-white relative overflow-x-auto">
+                    <div className="absolute top-2 right-3 opacity-50 text-xs">
+                      Rate Limit Flow
                     </div>
-                    <span className="text-gray-500">→</span>
-                    <div className="bg-red-600 px-3 py-2 rounded">
-                      IP 차단 확인
+                    <h4 className="text-sm font-semibold mb-4 text-gray-300">
+                      사용자 API Rate Limit 플로우
+                    </h4>
+                    <div className="min-w-[900px]">
+                      <div className="flex items-center gap-3 text-[11px]">
+                        <div className="border border-gray-600 rounded-lg p-3 bg-gray-800/50 w-32">
+                          <div className="text-[9px] text-gray-400 mb-1">
+                            요청
+                          </div>
+                          <div className="bg-blue-600 px-3 py-2 rounded text-center">
+                            API 요청
+                          </div>
+                        </div>
+                        <div className="text-gray-400">→</div>
+                        <div className="border border-gray-600 rounded-lg p-3 bg-gray-800/50 w-40">
+                          <div className="text-[9px] text-gray-400 mb-1">
+                            차단 확인
+                          </div>
+                          <div className="space-y-1.5">
+                            <div className="bg-gray-700 px-3 py-1.5 rounded text-center text-[10px]">
+                              IP 차단 여부 확인
+                            </div>
+                            <div className="text-[9px] text-red-400 text-center">
+                              차단 시 → 403/429 + 로그
+                            </div>
+                          </div>
+                        </div>
+                        <div className="text-gray-400">→</div>
+                        <div className="border border-gray-600 rounded-lg p-3 bg-gray-800/50 w-36">
+                          <div className="text-[9px] text-gray-400 mb-1">
+                            카운터
+                          </div>
+                          <div className="bg-gray-700 px-3 py-1.5 rounded text-center text-[10px]">
+                            IP/사용자/엔드포인트
+                            <br />
+                            카운터 증가
+                          </div>
+                        </div>
+                        <div className="text-gray-400">→</div>
+                        <div className="border border-gray-600 rounded-lg p-3 bg-gray-800/50 w-40">
+                          <div className="text-[9px] text-gray-400 mb-1">
+                            한도 판정
+                          </div>
+                          <div className="space-y-1.5">
+                            <div className="bg-gray-700 px-3 py-1.5 rounded text-center text-[10px]">
+                              요청 수 한도 초과 여부
+                            </div>
+                            <div className="text-[9px] text-red-400 text-center">
+                              초과 → 위반 누적, IP 차단
+                            </div>
+                          </div>
+                        </div>
+                        <div className="text-gray-400">→</div>
+                        <div className="border border-gray-600 rounded-lg p-3 bg-gray-800/50 w-32">
+                          <div className="text-[9px] text-gray-400 mb-1">
+                            응답
+                          </div>
+                          <div className="bg-green-700 px-3 py-2 rounded text-center text-[10px]">
+                            백엔드 처리
+                            <br />→ 정상 응답
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <span className="text-gray-500">→</span>
-                    <div className="bg-orange-600 px-3 py-2 rounded">
-                      Rate Limit 카운터 증가
+                  </div>
+
+                  {/* 액션 토큰 + 위변조 방지 플로우 */}
+                  <div className="bg-slate-900 rounded-xl p-6 text-white relative overflow-x-auto">
+                    <div className="absolute top-2 right-3 opacity-50 text-xs">
+                      Action Token Flow
                     </div>
-                    <span className="text-gray-500">→</span>
-                    <div className="bg-yellow-600 px-3 py-2 rounded text-black">
-                      한도 초과
+                    <h4 className="text-sm font-semibold mb-4 text-gray-300">
+                      액션 토큰 + 위변조 방지 플로우
+                    </h4>
+                    <div className="min-w-[900px]">
+                      <div className="flex items-center gap-3 text-[11px]">
+                        <div className="border border-gray-600 rounded-lg p-3 bg-gray-800/50 w-32">
+                          <div className="text-[9px] text-gray-400 mb-1">
+                            진입
+                          </div>
+                          <div className="bg-blue-600 px-3 py-2 rounded text-center text-[10px]">
+                            변경 페이지 진입
+                          </div>
+                        </div>
+                        <div className="text-gray-400">→</div>
+                        <div className="border border-gray-600 rounded-lg p-3 bg-gray-800/50 w-40">
+                          <div className="text-[9px] text-gray-400 mb-1">
+                            토큰 발급
+                          </div>
+                          <div className="space-y-1">
+                            <div className="bg-gray-700 px-2 py-1 rounded text-center text-[9px]">
+                              X-Action-Token
+                            </div>
+                            <div className="bg-gray-700 px-2 py-1 rounded text-center text-[9px]">
+                              X-Request-Id (UUID)
+                            </div>
+                            <div className="bg-gray-700 px-2 py-1 rounded text-center text-[9px]">
+                              X-Payload-Hash
+                            </div>
+                          </div>
+                          <div className="text-[9px] text-gray-400 text-center mt-1">
+                            → Redis 저장
+                          </div>
+                        </div>
+                        <div className="text-gray-400">→</div>
+                        <div className="border border-gray-600 rounded-lg p-3 bg-gray-800/50 w-36">
+                          <div className="text-[9px] text-gray-400 mb-1">
+                            제출
+                          </div>
+                          <div className="bg-gray-700 px-3 py-2 rounded text-center text-[10px]">
+                            3개 헤더 +<br />
+                            변경 데이터 전송
+                          </div>
+                        </div>
+                        <div className="text-gray-400">→</div>
+                        <div className="border border-gray-600 rounded-lg p-3 bg-gray-800/50 w-40">
+                          <div className="text-[9px] text-gray-400 mb-1">
+                            검증
+                          </div>
+                          <div className="space-y-1.5">
+                            <div className="bg-gray-700 px-3 py-1.5 rounded text-center text-[10px]">
+                              Redis 저장값 비교
+                            </div>
+                            <div className="text-[9px] text-red-400 text-center">
+                              불일치/중복 → 차단 + 로그
+                            </div>
+                          </div>
+                        </div>
+                        <div className="text-gray-400">→</div>
+                        <div className="border border-gray-600 rounded-lg p-3 bg-gray-800/50 w-32">
+                          <div className="text-[9px] text-gray-400 mb-1">
+                            완료
+                          </div>
+                          <div className="space-y-1.5">
+                            <div className="bg-green-700 px-3 py-1.5 rounded text-center text-[10px]">
+                              DB 변경 수행
+                            </div>
+                            <div className="text-[9px] text-green-400 text-center">
+                              토큰 사용 완료 처리
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <span className="text-gray-500">→</span>
-                    <div className="bg-purple-600 px-3 py-2 rounded">
-                      위반 횟수 누적
+                  </div>
+
+                  {/* 문의 상세 접근 토큰 플로우 */}
+                  <div className="bg-slate-900 rounded-xl p-6 text-white relative overflow-x-auto">
+                    <div className="absolute top-2 right-3 opacity-50 text-xs">
+                      Inquiry Access Token Flow
                     </div>
-                    <span className="text-gray-500">→</span>
-                    <div className="bg-red-700 px-3 py-2 rounded">
-                      IP 차단 플래그
+                    <h4 className="text-sm font-semibold mb-4 text-gray-300">
+                      문의 상세 접근 토큰 플로우
+                    </h4>
+                    <div className="min-w-[900px]">
+                      <div className="flex items-center gap-3 text-[11px]">
+                        <div className="border border-gray-600 rounded-lg p-3 bg-gray-800/50 w-32">
+                          <div className="text-[9px] text-gray-400 mb-1">
+                            등록
+                          </div>
+                          <div className="bg-blue-600 px-3 py-2 rounded text-center text-[10px]">
+                            문의 폼 제출
+                          </div>
+                        </div>
+                        <div className="text-gray-400">→</div>
+                        <div className="border border-gray-600 rounded-lg p-3 bg-gray-800/50 w-40">
+                          <div className="text-[9px] text-gray-400 mb-1">
+                            토큰 생성
+                          </div>
+                          <div className="bg-gray-700 px-3 py-2 rounded text-center text-[10px]">
+                            해당 문의 전용
+                            <br />
+                            일회용/단기 토큰
+                          </div>
+                        </div>
+                        <div className="text-gray-400">→</div>
+                        <div className="border border-gray-600 rounded-lg p-3 bg-gray-800/50 w-36">
+                          <div className="text-[9px] text-gray-400 mb-1">
+                            발송
+                          </div>
+                          <div className="bg-gray-700 px-3 py-2 rounded text-center text-[10px]">
+                            "문의 상세 보기"
+                            <br />
+                            URL 이메일/문자 발송
+                          </div>
+                        </div>
+                        <div className="text-gray-400">→</div>
+                        <div className="border border-gray-600 rounded-lg p-3 bg-gray-800/50 w-40">
+                          <div className="text-[9px] text-gray-400 mb-1">
+                            검증
+                          </div>
+                          <div className="space-y-1.5">
+                            <div className="bg-gray-700 px-3 py-1.5 rounded text-center text-[10px]">
+                              유효성·만료·fingerprint
+                            </div>
+                            <div className="text-[9px] text-red-400 text-center">
+                              만료/위조 → 재요청 안내
+                            </div>
+                          </div>
+                        </div>
+                        <div className="text-gray-400">→</div>
+                        <div className="border border-gray-600 rounded-lg p-3 bg-gray-800/50 w-32">
+                          <div className="text-[9px] text-gray-400 mb-1">
+                            완료
+                          </div>
+                          <div className="bg-green-700 px-3 py-2 rounded text-center text-[10px]">
+                            문의 상세 조회
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -701,13 +964,14 @@ export function ProjectGreen() {
                         직접 설계·구현한 영역
                       </h4>
                       <ul className="text-sm space-y-1 text-green-700 dark:text-green-300">
-                        <li>• 보안·인증 아키텍처</li>
-                        <li>• 데이터 모델 설계</li>
-                        <li>• 인프라 구성</li>
-                        <li>• 핵심 비즈니스 로직</li>
+                        <li>• 보안·인증 아키텍처 설계</li>
+                        <li>• 핵심 도메인 데이터 모델 설계</li>
+                        <li>• 인프라·배포 파이프라인 구성</li>
+                        <li>• 핵심 비즈니스 로직 구현</li>
                       </ul>
                       <p className="text-xs text-green-600 dark:text-green-400 mt-3 italic">
-                        → 서비스 안정성과 직결되는 부분은 직접 설계·구현
+                        → 서비스 안정성과 보안, 비즈니스 규칙에 직결되는 부분은
+                        직접 설계·구현 후 검증
                       </p>
                     </div>
 
@@ -717,13 +981,15 @@ export function ProjectGreen() {
                         AI 활용 영역
                       </h4>
                       <ul className="text-sm space-y-1 text-blue-700 dark:text-blue-300">
-                        <li>• 반복적인 CRUD 코드</li>
-                        <li>• 테스트 코드 초안</li>
-                        <li>• 리팩터링 아이디어</li>
-                        <li>• 문서화 초안 작성</li>
+                        <li>• 반복적인 CRUD·DTO·Mapper 코드 생성</li>
+                        <li>• 테스트 코드·Mock 초안 작성</li>
+                        <li>• 리팩터링 아이디어·대안 코드 제안</li>
+                        <li>• 기술 문서·API 설명 초안 작성</li>
                       </ul>
                       <p className="text-xs text-blue-600 dark:text-blue-400 mt-3 italic">
-                        → AI가 제안한 코드는 리뷰·수정 후 반영
+                        → AI가 생성한 코드는 테스트·리뷰를 거쳐 필요한 부분만
+                        채택하고, 여러 차례 리팩터링을 반복하며 구조를 단순화한
+                        뒤 반영
                       </p>
                     </div>
                   </div>
@@ -732,12 +998,14 @@ export function ProjectGreen() {
                     <p className="text-sm text-muted-foreground">
                       결과적으로,{" "}
                       <strong>
-                        개발 속도는 높이면서도 설계 책임은 직접 지는 개발 방식
+                        반복 작업 시간을 줄여 전체 개발 공수를 약 40~60% 단축
                       </strong>
-                      을 지향했습니다.
+                      하면서도 설계와 품질에 대한 최종 책임은 직접 지는 개발
+                      방식을 유지했습니다.
                     </p>
                     <p className="text-xs text-muted-foreground mt-2">
-                      코드 품질과 일관성을 확보하며 AI를 효과적으로 활용
+                      테스트와 코드 리뷰를 통해 품질과 일관성을 확보하며 AI를
+                      효과적으로 활용했습니다.
                     </p>
                   </div>
                 </div>

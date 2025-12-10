@@ -4,15 +4,17 @@ import {
   User,
   Code2,
   Database,
-  Layout,
+  Server,
   Smartphone,
   Shield,
+  Receipt,
+  BugOff,
 } from "lucide-react";
 
 export function Profile() {
   const skills = {
     Backend: [
-      "Java 8",
+      "Java",
       "Kotlin",
       "Spring Boot",
       "Spring Security",
@@ -70,26 +72,31 @@ export function Profile() {
               </h2>
               <div className="prose prose-lg text-muted-foreground">
                 <p className="mb-4">
-                  안녕하세요, <strong>Java Backend Developer 이세창</strong>
-                  입니다. 2021년 1월부터 2025년 6월까지 약 4년 6개월간
-                  <strong>블라이스 웹서비스 운영 및 통합 기능 개발</strong>을
-                  주도했습니다.
+                  Java/Spring 기반 <strong>백엔드 개발 경력 7년</strong> 동안,
+                  웹 서비스의 성능·결제·보안을 중심으로 안정적인 서비스 운영과
+                  아키텍처 고도화를 담당해 왔습니다.
                 </p>
                 <p className="mb-4">
-                  주로 <strong>Java/Spring</strong> 환경에서 개발하며, 성능
-                  개선, 결제·인앱 연동, Kafka 기반 알림 설계 등 주요 기능
-                  고도화를 통해 서비스의 안정성과 확장성을 향상시켰습니다.
+                  2021년 1월부터 2025년 6월까지는{" "}
+                  <strong>블라이스 웹서비스의 운영 및 통합 기능 개발</strong>을
+                  주도하며, SQL 튜닝과 인덱스 설계를 통해 주요 쿼리·배치 처리
+                  속도를 <strong>최대 5~6배까지 개선</strong>
+                  하고, 정기결제·인앱 결제 연동 및 Kafka 기반 알림 시스템을
+                  설계·구현 해 서비스 안정성과 확장성을 높였습니다.
                 </p>
                 <p className="mb-4">
-                  최근에는 <strong>한국그린전력 홈페이지 리뉴얼</strong>{" "}
-                  프로젝트를 1인 개발로 진행하며, Vue 3 기반 프론트엔드부터 AWS
-                  배포,
-                  <strong>보안 설계</strong>(Rate Limit, Turnstile, JWT/TOTP,
-                  AES-GCM)까지 풀스택 경험을 쌓았습니다.
+                  최근에는{" "}
+                  <strong>
+                    한국그린전력 홈페이지 리뉴얼 프로젝트에서 1인으로
+                  </strong>
+                  사용자 백엔드, 관리자 화면·백엔드, 배치, AWS 인프라 구성, 보안
+                  설계(Rate Limit, Turnstile, JWT/TOTP, AES-GCM) 를 엔드투엔드로
+                  설계·구현하며 전체 흐름을 책임지고 있습니다.
                 </p>
                 <p>
-                  분석과 설계를 우선시하며, 숫자로 증명하는 성능 개선과 명확한
-                  커뮤니케이션을 통한 협업을 중요하게 생각합니다.
+                  문제의 근본 원인을 분석해 구조적으로 해결하는 것을 중요하게
+                  생각하며, <strong>수치로 검증 가능한 성능 개선</strong>과
+                  명확한 커뮤니케이션을 통해 서비스와 팀에 기여하고자 합니다.
                 </p>
               </div>
             </div>
@@ -101,24 +108,32 @@ export function Profile() {
                 </h3>
                 <ul className="space-y-3">
                   <li className="flex items-center gap-3">
-                    <Database className="w-5 h-5 text-blue-500" />
-                    <span>SQL 튜닝 및 인덱스 설계 (5~6배 성능 개선)</span>
+                    <Database className="w-5 h-5 text-blue-600" />
+                    <span>SQL 튜닝·인덱스 설계 (5~6배 성능 개선)</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <Code2 className="w-5 h-5 text-green-500" />
-                    <span>결제/인앱 결제 시스템 설계 및 연동</span>
+                    <Receipt className="w-5 h-5 text-emerald-600" />
+                    <span>결제/인앱 결제 설계 및 정기결제·영수증 검증</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <Layout className="w-5 h-5 text-purple-500" />
-                    <span>Kafka 기반 비동기 이벤트 아키텍처</span>
+                    <Smartphone className="w-5 h-5 text-violet-500" />
+                    <span>Kafka 기반 비동기 이벤트·알림 아키텍처 설계</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <Smartphone className="w-5 h-5 text-orange-500" />
-                    <span>Spring Batch 배치 처리 및 운영 최적화</span>
+                    <BugOff className="w-5 h-5 text-sky-500" />
+                    <span>Spring Batch 배치 설계·운영 최적화</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <Shield className="w-5 h-5 text-red-500" />
-                    <span>보안 설계 (Rate Limit, CAPTCHA, 암호화)</span>
+                    <Code2 className="w-5 h-5 text-cyan-600" />
+                    <span>RESTful API 및 관리자 시스템 설계·개발</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <Shield className="w-5 h-5 text-red-600" />
+                    <span>보안 설계 (요청 제한·2단계 인증·데이터 암호화)</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <Server className="w-5 h-5 text-indigo-600" />
+                    <span>AWS 기반 백엔드 배포 및 인프라 구성</span>
                   </li>
                 </ul>
               </CardContent>
@@ -181,10 +196,11 @@ export function Profile() {
                     한국그린전력 홈페이지 리뉴얼
                   </h4>
                   <p className="text-xs text-muted-foreground">
-                    한국그린전력 | 1인 풀스택 개발
+                    한국그린전력 | 백엔드·관리자 시스템 단독 설계·개발
                   </p>
                   <p className="text-xs text-blue-600 dark:text-blue-400 mt-2">
-                    백엔드 개발 ~ 배포 대부분 과정 단독 수행, AWS·보안 구조 설계
+                    기존 PHP 홈페이지를 Kotlin/Spring Boot·AWS 기반으로
+                    재구축하며, 사용자·관리자 백엔드와 MFA 보안을 단독 설계
                   </p>
                 </div>
               </div>
@@ -205,11 +221,11 @@ export function Profile() {
                     Blice 웹소설·웹툰 서비스
                   </h4>
                   <p className="text-xs text-muted-foreground">
-                    KT | 웹소설·웹툰 서비스 백엔드 주도 운영·개발
+                    KT | 서비스 백엔드 주도 개발·운영
                   </p>
                   <p className="text-xs text-blue-600 dark:text-blue-400 mt-2">
-                    메인 페이지 응답속도 5~6배 개선, 정기·인앱 결제·이벤트
-                    설계·구현
+                    메인 응답속도 5~6배 개선과 정기·인앱 결제·이벤트 백엔드 신규
+                    구축으로 서비스 성능·매출 기여
                   </p>
                 </div>
               </div>
@@ -230,7 +246,8 @@ export function Profile() {
                     KT | 웹소설·웹툰 초기 플랫폼 운영·개발
                   </p>
                   <p className="text-xs text-blue-600 dark:text-blue-400 mt-2">
-                    관리자 통계 설계·구현, UI·기능 개선
+                    초기 플랫폼 운영을 담당하며, 관리자 통계·운영 화면 설계와
+                    UI·기능 개선으로 운영 효율 향상
                   </p>
                 </div>
               </div>
@@ -251,8 +268,8 @@ export function Profile() {
                     TTA | 개방형 검증지원 포털 1·2차 구축 참여
                   </p>
                   <p className="text-xs text-blue-600 dark:text-blue-400 mt-2">
-                    공공 검증지원 포털 1차 구축 참여, 2차 사용자 피드백 기반
-                    UI·기능 보완
+                    공공 검증지원 포털 1차 화면·기능 개발 및 2차 사용자 피드백
+                    기반 UI·기능 개선 수행
                   </p>
                 </div>
               </div>

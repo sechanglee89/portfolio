@@ -62,29 +62,46 @@ export function ProjectBlice() {
                 <div>
                   <h4 className="font-semibold mb-2">Role</h4>
                   <p className="text-sm text-muted-foreground">
-                    백엔드 개발(주도), 성능 개선, 결제/이벤트/쿠폰/웹툰 기능
+                    백엔드 리드 개발, 성능 개선, 결제/이벤트/쿠폰/웹툰 기능
                     개발, 운영/유지보수 전반
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-2">Tech Stack</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {[
-                      "Java 8",
-                      "Spring Framework",
-                      "MyBatis",
-                      "MariaDB",
-                      "Kafka",
-                      "Apache NiFi",
-                      "Spring Batch",
-                      "JSP",
-                      "jQuery",
-                      "Jenkins",
-                    ].map((tech) => (
-                      <Badge key={tech} variant="outline">
-                        {tech}
+                  <h4 className="font-semibold mb-2">Tech Highlights</h4>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex items-center gap-2">
+                      <Badge variant="secondary" className="shrink-0">
+                        Backend
                       </Badge>
-                    ))}
+                      <span className="text-muted-foreground text-slate-800">
+                        Java 8 · Spring Framework · MyBatis
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Badge variant="secondary" className="shrink-0">
+                        Infra/DB
+                      </Badge>
+                      <span className="text-muted-foreground text-slate-800">
+                        MariaDB 10.1.32 · Redis · Apache Kafka · Apache NiFi ·
+                        Spring Batch
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Badge variant="secondary" className="shrink-0">
+                        Frontend
+                      </Badge>
+                      <span className="text-muted-foreground text-slate-800">
+                        JSP, jQuery
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Badge variant="secondary" className="shrink-0">
+                        CI/CD
+                      </Badge>
+                      <span className="text-muted-foreground text-slate-800">
+                        Jenkins, GitLab
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -109,14 +126,14 @@ export function ProjectBlice() {
             </div>
 
             <div className="flex-1 w-full">
-              <div className="rounded-xl overflow-hidden shadow-2xl border bg-white dark:bg-gray-900 aspect-video relative group">
+              <div className="rounded-xl overflow-hidden shadow-2xl border bg-white dark:bg-gray-900 relative group">
                 <img
                   src="/public/images/projects/blice-main.jpg"
                   alt="Blice Service Main Screen"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <Badge className="bg-white text-black hover:bg-white/90">
+                  <Badge className="bg-blue-600 text-white">
                     KT Blice Service
                   </Badge>
                 </div>
@@ -174,7 +191,6 @@ export function ProjectBlice() {
                         <li>• Java 8</li>
                         <li>• Spring Framework</li>
                         <li>• MyBatis</li>
-                        <li>• Spring Batch</li>
                       </ul>
                     </div>
                   </div>
@@ -189,7 +205,6 @@ export function ProjectBlice() {
                       <ul className="list-hanging text-muted-foreground mt-1 text-xs space-y-0.5">
                         <li>• JSP</li>
                         <li>• jQuery</li>
-                        <li>• JavaScript</li>
                       </ul>
                     </div>
                   </div>
@@ -218,8 +233,7 @@ export function ProjectBlice() {
                     <div>
                       <h3 className="font-semibold text-sm">데이터베이스</h3>
                       <ul className="list-hanging text-muted-foreground mt-1 text-xs space-y-0.5">
-                        <li>• MariaDB (메인 DB) 10.1.32</li>
-                        <li>• MariaDB (통계 DB) 10.1.32</li>
+                        <li>• MariaDB 10.1.32 (메인/통계 DB 분리)</li>
                         <li>• Redis (3대)</li>
                       </ul>
                     </div>
@@ -235,7 +249,7 @@ export function ProjectBlice() {
                       <ul className="list-hanging text-muted-foreground mt-1 text-xs space-y-0.5">
                         <li>• KT Cloud WAF Pro</li>
                         <li>• 로드밸런서</li>
-                        <li>• Nginx (WEB)</li>
+                        <li>• Apache HTTPD (WEB)</li>
                         <li>• Tomcat (WAS)</li>
                         <li>• NAS</li>
                       </ul>
