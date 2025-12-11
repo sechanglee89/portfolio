@@ -132,11 +132,6 @@ export function ProjectBlice() {
                   alt="Blice Service Main Screen"
                   className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <Badge className="bg-blue-600 text-white">
-                    KT Blice Service
-                  </Badge>
-                </div>
               </div>
             </div>
           </div>
@@ -522,61 +517,6 @@ export function ProjectBlice() {
                       <div className="flex items-center gap-1">
                         <div className="w-2.5 h-2.5 bg-red-700 rounded"></div>
                         <span>캐시</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* 데이터 흐름 설명 */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="p-4 bg-muted/50 rounded-lg">
-                      <h4 className="font-semibold mb-2 text-sm flex items-center gap-2">
-                        <Bell className="w-4 h-4 text-orange-500" />
-                        알림 플로우
-                      </h4>
-                      <div className="flex flex-wrap items-center gap-2 text-xs">
-                        <div className="bg-purple-600 text-white px-2 py-1 rounded">
-                          WAS
-                        </div>
-                        <span className="text-muted-foreground">→</span>
-                        <div className="bg-orange-600 text-white px-2 py-1 rounded">
-                          Kafka
-                        </div>
-                        <span className="text-muted-foreground">→</span>
-                        <div className="bg-orange-700 text-white px-2 py-1 rounded">
-                          데몬
-                        </div>
-                        <span className="text-muted-foreground">→</span>
-                        <div className="bg-gray-600 text-white px-2 py-1 rounded">
-                          FCM/메일
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="p-4 bg-muted/50 rounded-lg">
-                      <h4 className="font-semibold mb-2 text-sm flex items-center gap-2">
-                        <CreditCard className="w-4 h-4 text-purple-500" />
-                        결제 플로우
-                      </h4>
-                      <div className="flex flex-wrap items-center gap-2 text-xs">
-                        <div className="bg-blue-600 text-white px-2 py-1 rounded">
-                          Client
-                        </div>
-                        <span className="text-muted-foreground">→</span>
-                        <div className="bg-purple-600 text-white px-2 py-1 rounded">
-                          WAS
-                        </div>
-                        <span className="text-muted-foreground">→</span>
-                        <div className="bg-indigo-600 text-white px-2 py-1 rounded">
-                          LUPIN/인앱
-                        </div>
-                        <span className="text-muted-foreground">→</span>
-                        <div className="bg-green-600 text-white px-2 py-1 rounded">
-                          DB
-                        </div>
-                        <span className="text-muted-foreground">→</span>
-                        <div className="bg-teal-600 text-white px-2 py-1 rounded">
-                          NiFi/Batch
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -1157,10 +1097,8 @@ export function ProjectBlice() {
                           • 구분값 추가로 이벤트 캐시와 구매 캐시{" "}
                           <strong>명확히 분리</strong>
                         </li>
-                        <li>
-                          • 즉시 발송: 관리자 서버가 즉시 처리
-                          <br />• 예약 발송: 배치가 예약 시각 도달 시 처리
-                        </li>
+                        <li>• 즉시 발송: 관리자 서버가 즉시 처리</li>
+                        <li>• 예약 발송: 배치가 예약 시각 도달 시 처리</li>
                         <li>
                           • 대상 사용자의 충전 캐시 테이블에 이벤트 캐시를 직접
                           적립

@@ -56,10 +56,10 @@ export function OtherProjects() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold tracking-tight mb-4">
-            주요 경력 요약
+            기타 프로젝트
           </h2>
           <p className="text-muted-foreground">
-            블라이스 프로젝트 외 참여했던 프로젝트들입니다.
+            주요 경력 외 참여했던 프로젝트들입니다.
           </p>
         </div>
 
@@ -67,7 +67,7 @@ export function OtherProjects() {
           {projects.map((project, index) => (
             <Card
               key={index}
-              className="hover:border-primary/50 transition-colors group cursor-pointer bg-white dark:bg-gray-800"
+              className="hover:border-primary/50 transition-colors group bg-white dark:bg-gray-800"
             >
               <CardHeader>
                 <div className="flex justify-between items-start">

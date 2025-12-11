@@ -127,11 +127,6 @@ export function ProjectGreen() {
                   alt="Solar Energy Plant"
                   className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <Badge className="bg-green-600 text-white">
-                    태양광 에너지 솔루션
-                  </Badge>
-                </div>
               </div>
             </div>
           </div>
