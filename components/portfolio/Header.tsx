@@ -8,7 +8,9 @@ export function Header() {
               Java Backend Developer
             </span>
             <span className="mx-3 text-slate-400 dark:text-slate-600">·</span>
-            <span className="text-slate-700 dark:text-slate-300">경력 7년</span>
+            <span className="text-slate-700 dark:text-slate-300">
+              경력 7년차
+            </span>
             <span className="mx-3 text-slate-400 dark:text-slate-600">·</span>
             <span className="text-slate-800 dark:text-slate-200">이세창</span>
           </h1>

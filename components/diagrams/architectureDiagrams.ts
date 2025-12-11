@@ -1,0 +1,196 @@
+// 블라이스 시스템 아키텍처 다이어그램
+export const bliceArchitectureDiagram = `
+flowchart TB
+    %% 클라이언트 레이어
+    subgraph CLIENT["클라이언트"]
+        USER_WEB["사용자 웹 브라우저"]
+        USER_APP["모바일 앱"]
+        ADMIN_WEB["관리자 웹 브라우저"]
+    end
+
+    %% 엣지 레이어  WAF  로드밸런서
+    subgraph EDGE["엣지 레이어"]
+        WAF["KT Cloud WAF Pro"]
+        LB["로드밸런서"]
+    end
+
+    %% 웹 레이어  Apache
+    subgraph WEB_USER["사용자 웹 서버"]
+        UWEB01["사용자 WEB01"]
+        UWEB02["사용자 WEB02"]
+    end
+
+    subgraph WEB_ADMIN["관리자 웹 서버"]
+        AWEB01["관리자 WEB01"]
+        AWEB02["관리자 WEB02"]
+    end
+
+    %% 애플리케이션 레이어  WAS
+    subgraph WAS_USER["사용자 WAS 서버"]
+        UWAS01["사용자 WAS01"]
+        UWAS02["사용자 WAS02"]
+    end
+
+    subgraph WAS_ADMIN["관리자 WAS 서버"]
+        AWAS01["관리자 WAS01"]
+        AWAS02["관리자 WAS02"]
+    end
+
+    %% 배치  NiFi
+    subgraph BATCH_LAYER["배치  통계 처리"]
+        NIFI["Apache NiFi"]
+        BATCH["배치 서버"]
+    end
+
+    %% 메시징  데몬
+    subgraph MSG_LAYER["메시징  데몬 서버"]
+        KAFKA["Kafka 클러스터 3대"]
+        DAEMON["푸시  이메일 데몬 서버"]
+        FCM["FCM 및 메일 전송 서비스"]
+    end
+
+    %% 데이터베이스
+    subgraph DB_LAYER["데이터베이스"]
+        MAIN_DB["메인 DB"]
+        STATS_DB["통계 DB UV PV"]
+    end
+
+    %% 캐시  이미지 처리 영역
+    subgraph IMAGE_LAYER["이미지 처리 및 스토리지"]
+        REDIS["Redis 서버 3대"]
+        CDS["CDS 서버 3대"]
+        NAS["NAS 서버 파일 저장소"]
+    end
+
+    %% 클라이언트 플로우
+    USER_WEB --> WAF
+    USER_APP --> WAF
+    ADMIN_WEB --> WAF
+
+    WAF --> LB
+
+    %% 로드밸런서 뒤 웹 서버
+    LB --> UWEB01
+    LB --> UWEB02
+    LB --> AWEB01
+    LB --> AWEB02
+
+    %% 웹 서버에서 WAS 서버로
+    UWEB01 --> UWAS01
+    UWEB02 --> UWAS02
+    AWEB01 --> AWAS01
+    AWEB02 --> AWAS02
+
+    %% WAS 와 메인 DB
+    UWAS01 --> MAIN_DB
+    UWAS02 --> MAIN_DB
+    AWAS01 --> MAIN_DB
+    AWAS02 --> MAIN_DB
+
+    %% WAS 와 Kafka  푸시  이메일 요청
+    UWAS01 --> KAFKA
+    UWAS02 --> KAFKA
+    AWAS01 --> KAFKA
+    AWAS02 --> KAFKA
+
+    %% Kafka 에서 데몬 서버
+    KAFKA --> DAEMON
+    DAEMON --> FCM
+
+    %% NiFi 와 배치  DB 연계
+    NIFI --> BATCH
+    NIFI --> MAIN_DB
+    MAIN_DB --> NIFI
+    NIFI --> STATS_DB
+
+    %% 이미지 처리 플로우
+    %% WAS 또는 웹 서버에서 CDS 호출
+    UWAS01 --> CDS
+    UWAS02 --> CDS
+    UWEB01 --> CDS
+    UWEB02 --> CDS
+
+    %% CDS 가 Redis 조회  없으면 NAS 조회
+    CDS --> REDIS
+    REDIS --> CDS
+    CDS --> NAS
+    NAS --> CDS
+`;
+
+// 한국그린전력 시스템 아키텍처 다이어그램
+export const kogreenArchitectureDiagram = `
+flowchart LR
+    %% ───────── 클라이언트 레이어 ─────────
+    subgraph Client["클라이언트"]
+        User("사용자 브라우저")
+        Admin("관리자 브라우저")
+    end
+
+    %% ───────── 엣지 레이어 (WAF + CDN) ─────────
+    subgraph Edge["엣지 레이어"]
+        WAF["AWS WAF"]
+        CDN["AWS CloudFront (CDN)"]
+    end
+
+    %% ───────── 스토리지 레이어 ─────────
+    subgraph Storage["스토리지"]
+        S3[(S3 버킷<br/>이미지·파일)]
+    end
+
+    %% ───────── 애플리케이션 / 인프라 (Lightsail 1대) ─────────
+    subgraph Lightsail["AWS Lightsail"]
+        NGINX["Nginx<br/>리버스 프록시"]
+
+        subgraph Apps["애플리케이션 계층"]
+            UserApp["사용자 서버 컨테이너"]
+            AdminApp["관리자 서버 컨테이너"]
+            Batch["ERP 배치 컨테이너"]
+        end
+
+        subgraph Infra["인프라 / 플랫폼 계층"]
+            Redis((Redis<br/>컨테이너))
+            Maria[(MariaDB<br/>서비스 DB<br/>컨테이너)]
+            Promtail["Promtail<br/>컨테이너"]
+            Loki["Loki<br/>컨테이너"]
+            Grafana["Grafana<br/>컨테이너"]
+        end
+    end
+
+    %% ───────── 외부 시스템 ─────────
+    subgraph External["외부 시스템"]
+        ERP[(ERP DB)]
+    end
+
+    %% ───────── 흐름 정의 ─────────
+
+    %% 클라이언트 -> WAF -> CDN
+    User --> WAF
+    Admin --> WAF
+    WAF --> CDN
+
+    %% CDN -> S3 / Lightsail(Nginx)
+    CDN --> S3
+    CDN --> NGINX
+
+    %% Nginx -> 앱 서버
+    NGINX --> UserApp
+    NGINX --> AdminApp
+
+    %% 앱 서버 -> DB / ERP / Redis
+    UserApp --> Maria
+    AdminApp --> Maria
+    Batch --> Maria
+
+    Batch --> ERP
+
+    UserApp --> Redis
+    AdminApp --> Redis
+
+    %% 로그/모니터링 플로우
+    UserApp --> Promtail
+    AdminApp --> Promtail
+    Batch --> Promtail
+
+    Promtail --> Loki
+    Loki --> Grafana
+`;

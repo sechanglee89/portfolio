@@ -1,3 +1,6 @@
+/* Print 스타일 import */
+@import "./print.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

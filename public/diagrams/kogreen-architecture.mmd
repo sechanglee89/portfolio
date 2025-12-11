@@ -1,0 +1,91 @@
+flowchart LR
+    %% ───────── 클라이언트 레이어 ─────────
+    subgraph Client["클라이언트"]
+        User("사용자 브라우저")
+        Admin("관리자 브라우저")
+    end
+
+    %% ───────── 엣지 레이어 (WAF + CDN) ─────────
+    subgraph Edge["엣지 레이어"]
+        WAF["AWS WAF"]
+        CDN["AWS CloudFront (CDN)"]
+    end
+
+    %% ───────── 스토리지 레이어 ─────────
+    subgraph Storage["스토리지"]
+        S3[(S3 버킷<br/>이미지·파일)]
+    end
+
+    %% ───────── 애플리케이션 / 인프라 (Lightsail 1대) ─────────
+    subgraph Lightsail["AWS Lightsail"]
+        NGINX["Nginx<br/>리버스 프록시"]
+
+        subgraph Apps["애플리케이션 계층"]
+            UserApp["사용자 서버 컨테이너"]
+            AdminApp["관리자 서버 컨테이너"]
+            Batch["ERP 배치 컨테이너"]
+        end
+
+        subgraph Infra["인프라 / 플랫폼 계층"]
+            Redis((Redis<br/>컨테이너))
+            Maria[(MariaDB<br/>서비스 DB<br/>컨테이너)]
+            Promtail["Promtail<br/>컨테이너"]
+            Loki["Loki<br/>컨테이너"]
+            Grafana["Grafana<br/>컨테이너"]
+        end
+    end
+
+    %% ───────── 외부 시스템 ─────────
+    subgraph External["외부 시스템"]
+        ERP[(ERP DB)]
+    end
+
+    %% ───────── 흐름 정의 ─────────
+
+    %% 클라이언트 -> WAF -> CDN
+    User --> WAF
+    Admin --> WAF
+    WAF --> CDN
+
+    %% CDN -> S3 / Lightsail(Nginx)
+    CDN --> S3
+    CDN --> NGINX
+
+    %% Nginx -> 앱 서버
+    NGINX --> UserApp
+    NGINX --> AdminApp
+
+    %% 앱 서버 -> DB / ERP / Redis
+    UserApp --> Maria
+    AdminApp --> Maria
+    Batch --> Maria
+
+    Batch --> ERP
+
+    UserApp --> Redis
+    AdminApp --> Redis
+
+    %% 로그/모니터링 플로우
+    UserApp --> Promtail
+    AdminApp --> Promtail
+    Batch --> Promtail
+
+    Promtail --> Loki
+    Loki --> Grafana
+
+    %% 스타일 정의
+    classDef default fill:#e0f2fe,stroke:#0ea5e9,color:#1e293b
+    classDef clientNode fill:#dbeafe,stroke:#3b82f6,color:#1e293b
+    classDef edgeNode fill:#fce7f3,stroke:#ec4899,color:#1e293b
+    classDef storageNode fill:#fef3c7,stroke:#f59e0b,color:#1e293b
+    classDef appNode fill:#e0e7ff,stroke:#6366f1,color:#1e293b
+    classDef infraNode fill:#dcfce7,stroke:#22c55e,color:#1e293b
+    classDef monitorNode fill:#f3e8ff,stroke:#a855f7,color:#1e293b
+
+    class User,Admin clientNode
+    class WAF,CDN edgeNode
+    class S3 storageNode
+    class NGINX,UserApp,AdminApp,Batch appNode
+    class Redis,Maria infraNode
+    class Promtail,Loki,Grafana monitorNode
+    class ERP storageNode

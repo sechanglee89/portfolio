@@ -128,7 +128,7 @@ export function ProjectBlice() {
             <div className="flex-1 w-full">
               <div className="rounded-xl overflow-hidden shadow-2xl border bg-white dark:bg-gray-900 relative group">
                 <img
-                  src="/public/images/projects/blice-main.jpg"
+                  src="/images/projects/blice-main.jpg"
                   alt="Blice Service Main Screen"
                   className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105"
                 />

@@ -97,9 +97,13 @@ export function Navigation() {
                 )}
               </button>
             ))}
-            {/* <Button size="sm" onClick={() => scrollToSection("contact")}>
-              Contact Me
-            </Button> */}
+            <Button
+              size="sm"
+              onClick={() => window.open("/#print", "_blank")}
+              variant="outline"
+            >
+              PDF 다운로드
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}

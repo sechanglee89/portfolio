@@ -1,0 +1,229 @@
+/* A4 출력용 스타일 */
+@media print {
+  @page {
+    size: A4;
+    margin: 15mm;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .print-portfolio {
+    width: 210mm;
+  }
+
+  .page-break {
+    page-break-after: always;
+  }
+
+  .page-break-before {
+    page-break-before: always;
+  }
+
+  .avoid-break {
+    page-break-inside: avoid;
+  }
+}
+
+/* 화면에서 미리보기용 스타일 */
+.print-portfolio {
+  max-width: 210mm;
+  margin: 0 auto;
+  background: white;
+  color: black;
+  font-size: 10pt;
+  line-height: 1.5;
+}
+
+.print-portfolio .page {
+  min-height: 297mm;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.print-portfolio .page-break {
+  height: 0;
+  page-break-after: always;
+  margin: 0;
+  border: none;
+}
+
+/* 표지 스타일 */
+.print-cover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(297mm - 30mm);
+  text-align: center;
+}
+
+.print-cover .profile-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 2rem;
+}
+
+.print-cover .title {
+  font-size: 28pt;
+  font-weight: bold;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+.print-cover .subtitle {
+  font-size: 14pt;
+  color: #64748b;
+  margin-bottom: 1rem;
+}
+
+.print-cover .name {
+  font-size: 18pt;
+  font-weight: 600;
+  color: #3b82f6;
+}
+
+.print-cover .contact-info {
+  margin-top: 2rem;
+  font-size: 10pt;
+  color: #64748b;
+}
+
+/* 섹션 스타일 */
+.print-section {
+  margin-bottom: 1.5rem;
+}
+
+.print-section-title {
+  font-size: 14pt;
+  font-weight: bold;
+  color: #1e293b;
+  border-bottom: 2px solid #3b82f6;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.print-subsection-title {
+  font-size: 11pt;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+
+/* 카드/박스 스타일 */
+.print-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  padding: 0.75rem;
+  background: #f8fafc;
+}
+
+.print-badge {
+  display: inline-block;
+  background: #e2e8f0;
+  color: #475569;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 8pt;
+  margin-right: 4px;
+  margin-bottom: 4px;
+}
+
+.print-badge-primary {
+  background: #3b82f6;
+  color: white;
+}
+
+.print-badge-green {
+  background: #16a34a;
+  color: white;
+}
+
+/* 그리드 레이아웃 */
+.print-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.print-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.75rem;
+}
+
+/* 리스트 스타일 */
+.print-list {
+  margin: 0;
+}
+
+.print-list li {
+  margin-bottom: 0.25rem;
+  font-size: 9pt;
+}
+
+/* 텍스트 스타일 */
+.print-text-sm {
+  font-size: 8pt;
+}
+
+.print-text-muted {
+  color: #64748b;
+}
+
+.print-text-primary {
+  color: #3b82f6;
+}
+
+/* 다이어그램 박스 */
+.print-diagram {
+  background: #1e293b;
+  color: white;
+  padding: 1rem;
+  border-radius: 4px;
+  font-size: 8pt;
+  margin: 0.75rem 0;
+}
+
+/* 플로우 스타일 */
+.print-flow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.print-flow-step {
+  background: #e2e8f0;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 8pt;
+}
+
+.print-flow-arrow {
+  color: #94a3b8;
+}
+
+/* Mermaid 다이어그램 스타일 */
+.mermaid-container {
+  width: 100%;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.mermaid-container svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Print 모드에서 Mermaid SVG 최적화 */
+@media print {
+  .mermaid-container svg {
+    page-break-inside: avoid;
+  }
+}
