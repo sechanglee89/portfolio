@@ -123,7 +123,9 @@ export function ProjectGreen() {
             <div className="flex-1 w-full">
               <div className="rounded-xl overflow-hidden shadow-2xl border bg-white dark:bg-gray-900 relative group">
                 <img
-                  src={`${import.meta.env.BASE_URL}images/projects/kogreen-main.jpg`}
+                  src={`${
+                    import.meta.env.BASE_URL
+                  }images/projects/kogreen-main.jpg`}
                   alt="Solar Energy Plant"
                   className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105"
                 />
