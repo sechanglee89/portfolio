@@ -1,40 +1,39 @@
 import { ArchitectureDiagram } from "../diagrams/ArchitectureDiagram";
 
-export function PrintProjectBlice() {
+export function PrintMonoProjectBlice() {
   return (
     <>
       {/* 프로젝트 개요 */}
       <div className="page">
-        <h2 className="print-section-title">📘 Project 01: 블라이스(Blice)</h2>
+        <h2 className="print-mono-section-title">
+          Project 01: 블라이스(Blice)
+        </h2>
 
-        {/* 개요 */}
         <div className="print-section">
           <div className="flex gap-2 mb-2">
-            <span className="print-badge print-badge-primary">
-              Main Project
-            </span>
-            <span className="text-[8pt] text-slate-500">
+            <span className="print-mono-badge">Main Project</span>
+            <span className="text-[8pt] text-slate-600">
               2021.01 - 2025.06 (4년 6개월)
             </span>
           </div>
           <h3 className="text-[12pt] font-bold mb-1">
             블라이스(Blice) 웹소설·웹툰 서비스
           </h3>
-          <p className="text-[9pt] text-slate-600 mb-3">
+          <p className="text-[9pt] text-slate-700 mb-3">
             KT 고객사 웹소설/웹툰 콘텐츠 플랫폼의 운영 및 통합 기능 개발
           </p>
 
           <div className="print-grid-2">
             <div className="print-card">
               <div className="font-semibold text-[9pt] mb-1">Role</div>
-              <p className="text-[8pt] text-slate-600">
+              <p className="text-[8pt] text-slate-700">
                 백엔드 리드 개발, 성능 개선, 결제/이벤트/쿠폰/웹툰 기능 개발,
                 운영/유지보수 전반
               </p>
             </div>
             <div className="print-card">
               <div className="font-semibold text-[9pt] mb-1">핵심 성과</div>
-              <ul className="text-[8pt] text-slate-600 space-y-0.5">
+              <ul className="text-[8pt] text-slate-700 space-y-0.5">
                 <li>• 메인 페이지 2s → 300–400ms (5–6배 단축)</li>
                 <li>• 정기결제/인앱 결제 신규 구축</li>
                 <li>• 이벤트 캐시·쿠폰·웹툰 확장</li>
@@ -42,24 +41,23 @@ export function PrintProjectBlice() {
             </div>
           </div>
 
-          {/* Tech Highlights */}
           <div className="mt-3">
             <div className="font-semibold text-[9pt] mb-1">Tech Highlights</div>
             <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-[8pt]">
               <div className="flex items-center gap-1">
-                <span className="print-badge">Backend</span>
+                <span className="print-mono-badge">Backend</span>
                 <span>Java 8 · Spring Framework · MyBatis</span>
               </div>
               <div className="flex items-center gap-1">
-                <span className="print-badge">Infra/DB</span>
+                <span className="print-mono-badge">Infra/DB</span>
                 <span>MariaDB 10.1.32 · Redis · Kafka · NiFi · Batch</span>
               </div>
               <div className="flex items-center gap-1">
-                <span className="print-badge">Frontend</span>
+                <span className="print-mono-badge">Frontend</span>
                 <span>JSP, jQuery</span>
               </div>
               <div className="flex items-center gap-1">
-                <span className="print-badge">CI/CD</span>
+                <span className="print-mono-badge">CI/CD</span>
                 <span>GitLab · Jenkins</span>
               </div>
             </div>
@@ -68,7 +66,7 @@ export function PrintProjectBlice() {
 
         {/* 시스템 아키텍처 */}
         <div className="print-section">
-          <h3 className="print-subsection-title">🏗️ 시스템 아키텍처</h3>
+          <h3 className="print-subsection-title">시스템 아키텍처</h3>
           <div className="print-grid-3 text-[8pt]">
             <div className="print-card">
               <div className="font-semibold mb-1">백엔드</div>
@@ -118,7 +116,6 @@ export function PrintProjectBlice() {
             </div>
           </div>
 
-          {/* 아키텍처 다이어그램 */}
           <div className="mt-4">
             <ArchitectureDiagram project="blice" className="w-full" />
           </div>
@@ -130,13 +127,13 @@ export function PrintProjectBlice() {
       {/* 성능 개선 */}
       <div className="page">
         <h3 className="print-subsection-title">
-          ⚡ 성능 개선: 메인 페이지 2초 → 300-400ms
+          성능 개선: 메인 페이지 2초 → 300-400ms
         </h3>
 
         <div className="print-grid-2">
           <div className="print-card">
             <div className="font-semibold text-[9pt] text-red-600 mb-1">
-              ☠️ 문제 상황
+              문제
             </div>
             <ul className="text-[8pt] space-y-1">
               <li>• 메인 페이지 응답 지연, 조회 성능 저하</li>
@@ -146,7 +143,7 @@ export function PrintProjectBlice() {
           </div>
           <div className="print-card">
             <div className="font-semibold text-[9pt] text-blue-600 mb-1">
-              📚 분석
+              분석
             </div>
             <ul className="text-[8pt] space-y-1">
               <li>
@@ -163,11 +160,9 @@ export function PrintProjectBlice() {
 
         <div className="print-card mt-3">
           <div className="flex items-baseline justify-between gap-2 mb-1">
-            <div className="font-semibold text-[9pt] text-green-600">
-              💡 해결
-            </div>
+            <div className="font-semibold text-[9pt] text-green-600">해결</div>
             <div className="text-right">
-              <span className="print-mono-badge">✅ 5-6배 성능 향상</span>
+              <span className="print-mono-badge">5-6배 성능 향상</span>
               <span className="text-[8pt] text-slate-600 ml-2">
                 삭제 배치 처리 시간 안정화, 피크 시간대 지연 민감도 완화
               </span>
@@ -185,13 +180,10 @@ export function PrintProjectBlice() {
           </div>
         </div>
 
-        {/* 정기결제 & 인앱 결제 */}
-        <h3 className="print-subsection-title">💳 정기결제 & 인앱 결제 연동</h3>
+        <h3 className="print-subsection-title">정기결제 & 인앱 결제 연동</h3>
 
         <div className="print-card">
-          <div className="font-semibold text-[9pt] text-red-600 mb-1">
-            ☠️ 문제
-          </div>
+          <div className="font-semibold text-[9pt] text-red-600 mb-1">문제</div>
           <ul className="text-[8pt] space-y-0.5">
             <li>• 신규 정책(셀렉트 이용권/캐시) 도입으로 정기결제 필요</li>
             <li>• 모바일 인앱 결제 연동 요구</li>
@@ -232,7 +224,7 @@ export function PrintProjectBlice() {
 
         <div className="print-card mt-2 bg-green-50">
           <div className="font-semibold text-[9pt] text-green-600 mb-1">
-            ✅ 성과
+            성과
           </div>
           <ul className="text-[8pt] space-y-0.5">
             <li>
@@ -246,7 +238,7 @@ export function PrintProjectBlice() {
           </ul>
         </div>
 
-        <h3 className="print-subsection-title">🎁 이벤트 캐시 & 웹툰 확장</h3>
+        <h3 className="print-subsection-title">이벤트 캐시 & 웹툰 확장</h3>
 
         <div className="print-grid-2">
           <div className="print-card">
@@ -260,8 +252,8 @@ export function PrintProjectBlice() {
               <li>• 정산 단계에서 이벤트 캐시 제외 규칙 고정 적용</li>
             </ul>
             <div className="mt-1 text-[8pt] text-green-600">
-              ✅ 이벤트성 지급 자동화로 운영 비용/오류율 감소, 정산 시 구매
-              캐시만 반영
+              이벤트성 지급 자동화로 운영 비용/오류율 감소, 정산 시 구매 캐시만
+              반영
             </div>
           </div>
           <div className="print-card">
@@ -277,12 +269,12 @@ export function PrintProjectBlice() {
               </li>
             </ul>
             <div className="mt-1 text-[8pt] text-green-600">
-              ✅ 스키마 대규모 변경 없이 웹툰 도입/운영 안정화
+              스키마 대규모 변경 없이 웹툰 도입/운영 안정화
             </div>
           </div>
         </div>
 
-        <h3 className="print-subsection-title">⚙️ 운영 고도화 및 품질 관리</h3>
+        <h3 className="print-subsection-title">운영 고도화 및 품질 관리</h3>
 
         <div className="print-grid-3 text-[8pt]">
           <div className="print-card">
@@ -332,7 +324,7 @@ export function PrintProjectBlice() {
           </div>
         </div>
 
-        <h3 className="print-subsection-title">💬 협업 & 회고</h3>
+        <h3 className="print-subsection-title">협업 & 회고</h3>
 
         <div className="print-grid-2 text-[8pt]">
           <div className="print-card">

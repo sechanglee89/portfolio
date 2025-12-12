@@ -562,24 +562,23 @@ export function ProjectBlice() {
                       <li className="flex items-start gap-2">
                         <CheckCircle2 className="w-5 h-5 text-blue-500 mt-0.5 shrink-0" />
                         <span>
-                          삭제 조건이{" "}
-                          <strong>PK가 아닌 보조 인덱스 컬럼</strong>이었고,
-                          실행계획상 <strong>풀스캔</strong> 수행
+                          조건 컬럼 인덱스만 사용되어{" "}
+                          <strong>PK lookup과 정렬 비용이 누적</strong>
                         </span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle2 className="w-5 h-5 text-blue-500 mt-0.5 shrink-0" />
                         <span>
-                          "보조 인덱스 탐색 → PK lookup → 삭제" 절차에서 대상
-                          건수 증가 시 <strong>비용 기하급수적 증가</strong>
+                          보조 인덱스 탐색 → PK lookup → 삭제 반복으로{" "}
+                          <strong>랜덤 I/O 비용 증가</strong>
                         </span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle2 className="w-5 h-5 text-blue-500 mt-0.5 shrink-0" />
                         <span>
-                          메인 쿼리도{" "}
+                          실행 계획에서{" "}
                           <code className="bg-muted px-1 rounded">
-                            Using temporary; Using filesort
+                            Using temporary / Using filesort
                           </code>{" "}
                           발생
                         </span>
@@ -773,9 +772,8 @@ export function ProjectBlice() {
                           Kafka 기반 비동기 알림
                         </h3>
                         <p className="text-muted-foreground mt-1 text-sm">
-                          결제 증액·전환 알림을 Kafka 이벤트로 비동기 전파.{" "}
-                          <strong>사용자 동의 프로세스</strong>(다크패턴 방지)
-                          연결.
+                          결제 승인·전환 알림을 Kafka 이벤트로 비동기 전파하고,
+                          사용자 동의 흐름과 연동
                         </p>
                       </div>
                     </div>

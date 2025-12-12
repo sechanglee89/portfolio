@@ -51,6 +51,16 @@ export function Navigation() {
     }
   };
 
+  const handleDownloadPDF = () => {
+    // 이미 준비된 PDF 파일 다운로드
+    const link = document.createElement("a");
+    link.href = "/images/pdf/이세창_포트폴리오.pdf";
+    link.download = "이세창_포트폴리오.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   const navItems = [
     { label: "프로필", id: "profile" },
     { label: "Project: 블라이스", id: "blice" },
@@ -97,11 +107,7 @@ export function Navigation() {
                 )}
               </button>
             ))}
-            <Button
-              size="sm"
-              onClick={() => window.open("/#print", "_blank")}
-              variant="outline"
-            >
+            <Button size="sm" onClick={handleDownloadPDF} variant="outline">
               PDF 다운로드
             </Button>
           </div>

@@ -1,0 +1,174 @@
+/* 흑백(Print Mono) 전용 스타일: 기존 print.css는 유지하고, /print-mono에서만 적용 */
+
+@media print {
+  @page {
+    size: A4;
+    margin: 15mm;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .print-mono-portfolio {
+    width: 210mm;
+  }
+
+  .print-mono-portfolio .page-break {
+    page-break-after: always;
+  }
+
+  .print-mono-portfolio .page-break-before {
+    page-break-before: always;
+  }
+
+  .print-mono-portfolio .avoid-break {
+    page-break-inside: avoid;
+  }
+}
+
+/* 화면 미리보기 */
+.print-mono-portfolio {
+  max-width: 210mm;
+  margin: 0 auto;
+  background: white;
+  color: black;
+  font-size: 10pt;
+  line-height: 1.5;
+}
+
+.print-mono-portfolio .page {
+  min-height: 297mm;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.print-mono-portfolio .page-break {
+  height: 0;
+  page-break-after: always;
+  margin: 0;
+  border: none;
+}
+
+/* 표지 */
+.print-mono-cover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(297mm - 30mm);
+  text-align: center;
+}
+
+.print-mono-cover .profile-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 2rem;
+}
+
+.print-mono-cover .title {
+  font-size: 28pt;
+  font-weight: bold;
+  color: #111;
+  margin-bottom: 0.5rem;
+}
+
+.print-mono-cover .subtitle {
+  font-size: 14pt;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.print-mono-cover .name {
+  font-size: 18pt;
+  font-weight: 600;
+  color: #111;
+}
+
+.print-mono-cover .contact-info {
+  margin-top: 2rem;
+  font-size: 10pt;
+  color: #333;
+}
+
+/* 섹션 타이틀 */
+.print-mono-section-title {
+  font-size: 14pt;
+  font-weight: bold;
+  color: #111;
+  border-bottom: 2px solid #111;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* 배지 */
+.print-mono-badge {
+  display: inline-block;
+  background: transparent;
+  color: #111;
+  border: 1px solid #111;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 8pt;
+  margin-right: 4px;
+  margin-bottom: 4px;
+}
+
+/* print.css 기반 컴포넌트(그리드/카드/서브타이틀 등)는 그대로 쓰되, 모노 느낌으로 오버라이드 */
+.print-mono-portfolio .print-section-title {
+  color: #111;
+  border-bottom: 2px solid #111;
+}
+
+.print-mono-portfolio .print-subsection-title {
+  color: #111;
+}
+
+.print-mono-portfolio .print-card {
+  border: 1px solid #333;
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+  background: #fff;
+}
+
+.print-mono-portfolio .print-badge,
+.print-mono-portfolio .print-badge-primary,
+.print-mono-portfolio .print-badge-green {
+  background: transparent;
+  color: #111;
+  border: 1px solid #111;
+}
+
+.print-mono-portfolio img {
+  filter: grayscale(100%) contrast(1.05);
+}
+
+/* Tailwind 유틸 컬러를 흑백으로 강제(모노 페이지에서만) */
+.print-mono-portfolio .text-red-600,
+.print-mono-portfolio .text-blue-600,
+.print-mono-portfolio .text-green-600,
+.print-mono-portfolio .text-orange-600,
+.print-mono-portfolio .text-purple-600,
+.print-mono-portfolio .text-teal-600 {
+  color: #111 !important;
+}
+
+.print-mono-portfolio .bg-green-50,
+.print-mono-portfolio .bg-purple-50,
+.print-mono-portfolio .bg-blue-100,
+.print-mono-portfolio .bg-green-100,
+.print-mono-portfolio .bg-yellow-50,
+.print-mono-portfolio .bg-red-50,
+.print-mono-portfolio .bg-slate-50 {
+  background: #f5f5f5 !important;
+}
+
+.print-mono-portfolio .border-red-200,
+.print-mono-portfolio .border-yellow-200,
+.print-mono-portfolio .border-red-200,
+.print-mono-portfolio .border-blue-600 {
+  border-color: #999 !important;
+}

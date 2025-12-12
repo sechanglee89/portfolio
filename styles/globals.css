@@ -1,5 +1,6 @@
 /* Print 스타일 import */
 @import "./print.css";
+@import "./print-mono.css";
 
 @tailwind base;
 @tailwind components;
