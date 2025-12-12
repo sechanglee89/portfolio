@@ -7,10 +7,11 @@ export function ArchitectureDiagram({
   project,
   className = "",
 }: ArchitectureDiagramProps) {
+  const baseUrl = import.meta.env.BASE_URL;
   const imageUrl =
     project === "blice"
-      ? "/diagrams/blice-architecture.png"
-      : "/diagrams/kogreen-architecture.png";
+      ? `${baseUrl}diagrams/blice-architecture.png`
+      : `${baseUrl}diagrams/kogreen-architecture.png`;
   const altText =
     project === "blice"
       ? "블라이스 시스템 아키텍처"

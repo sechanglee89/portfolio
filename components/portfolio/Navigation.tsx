@@ -54,7 +54,7 @@ export function Navigation() {
   const handleDownloadPDF = () => {
     // 이미 준비된 PDF 파일 다운로드
     const link = document.createElement("a");
-    link.href = "/images/pdf/이세창_포트폴리오.pdf";
+    link.href = `${import.meta.env.BASE_URL}images/pdf/이세창_포트폴리오.pdf`;
     link.download = "이세창_포트폴리오.pdf";
     document.body.appendChild(link);
     link.click();

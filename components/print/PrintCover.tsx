@@ -4,7 +4,7 @@ export function PrintCover() {
       <div className="print-cover page">
         {/* 프로필 사진 */}
         <img
-          src="/images/profiles/profile.jpg"
+          src={`${import.meta.env.BASE_URL}images/profiles/profile.jpg`}
           alt="이세창"
           className="profile-image"
         />
