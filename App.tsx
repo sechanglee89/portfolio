@@ -16,7 +16,7 @@ function App() {
   useEffect(() => {
     const checkLocation = () => {
       setIsPrintMode(window.location.hash === "#print");
-      setIsPrintMonoMode(window.location.pathname === "/print-mono");
+      setIsPrintMonoMode(window.location.pathname.endsWith("/print-mono"));
     };
 
     checkLocation();

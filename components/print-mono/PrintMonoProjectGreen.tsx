@@ -13,7 +13,7 @@ export function PrintMonoProjectGreen() {
           <div className="flex gap-2 mb-2">
             <span className="print-mono-badge">Project 02</span>
             <span className="text-[8pt] text-slate-600">
-              진행중 (2025.08 ~ 현재)
+              2025.08 - 2026.01 (6개월)
             </span>
           </div>
 

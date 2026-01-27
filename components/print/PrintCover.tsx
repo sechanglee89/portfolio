@@ -37,7 +37,7 @@ export function PrintCover() {
             peersc@naver.com
           </a>
           <span className="text-slate-400">·</span>
-          <span>Portfolio 2025</span>
+          <span>Portfolio 2026</span>
         </div>
       </div>
 

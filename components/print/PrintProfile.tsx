@@ -72,7 +72,7 @@ export function PrintProfile() {
             <strong>한국그린전력 홈페이지 리뉴얼 프로젝트에서 1인으로</strong>{" "}
             사용자 백엔드, 관리자 화면·백엔드, 배치, AWS 인프라 구성, 보안
             설계(Rate Limit, Turnstile, JWT/TOTP, AES-GCM)를 엔드투엔드로
-            설계·구현하며 전체 흐름을 책임지고 있습니다.
+            설계·구현하며 전체 흐름을 책임졌습니다.
           </p>
         </div>
       </div>
@@ -124,10 +124,9 @@ export function PrintProfile() {
         <div className="print-grid-2">
           <div className="print-card">
             <div className="flex items-center gap-2 mb-1">
-              <span className="print-badge print-badge-green font-semibold">
-                진행중
+              <span className="text-[8pt] text-slate-500">
+                2025.08 - 2026.01
               </span>
-              <span className="text-[8pt] text-slate-500">2025.08 - 현재</span>
             </div>
             <div className="font-semibold text-[9pt]">
               한국그린전력 홈페이지 리뉴얼

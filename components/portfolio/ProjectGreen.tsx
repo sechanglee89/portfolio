@@ -27,7 +27,7 @@ export function ProjectGreen() {
               <div className="flex items-center gap-2 mb-2">
                 <Badge className="bg-green-600">Project 02</Badge>
                 <span className="text-sm text-muted-foreground">
-                  진행중 (2025.08 ~ 현재)
+                  2025.08 - 2026.01 (6개월)
                 </span>
               </div>
               <h2 className="text-4xl font-bold mb-4">

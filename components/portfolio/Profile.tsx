@@ -91,7 +91,7 @@ export function Profile() {
                   </strong>
                   사용자 백엔드, 관리자 화면·백엔드, 배치, AWS 인프라 구성, 보안
                   설계(Rate Limit, Turnstile, JWT/TOTP, AES-GCM) 를 엔드투엔드로
-                  설계·구현하며 전체 흐름을 책임지고 있습니다.
+                  설계·구현하며 전체 흐름을 책임졌습니다.
                 </p>
                 <p>
                   문제의 근본 원인을 분석해 구조적으로 해결하는 것을 중요하게
@@ -190,7 +190,7 @@ export function Profile() {
                     </span>
                   </div>
                   <p className="text-xs text-muted-foreground mb-1">
-                    2025.08 - 현재
+                    2025.08 - 2026.01 (6개월)
                   </p>
                   <h4 className="font-bold text-sm mb-1">
                     한국그린전력 홈페이지 리뉴얼
@@ -215,7 +215,7 @@ export function Profile() {
                     </span>
                   </div>
                   <p className="text-xs text-muted-foreground mb-1">
-                    2021.01 - 2025.06
+                    2021.01 - 2025.06 (4년 6개월)
                   </p>
                   <h4 className="font-bold text-sm mb-1">
                     Blice 웹소설·웹툰 서비스
@@ -237,7 +237,7 @@ export function Profile() {
                     <div className="w-3 h-3 rounded-full bg-gray-400"></div>
                   </div>
                   <p className="text-xs text-muted-foreground mb-1">
-                    2020.11 - 2022.08
+                    2020.11 - 2022.08 (1년 10개월)
                   </p>
                   <h4 className="font-bold text-sm mb-1">
                     Blice Choice 운영·개발
@@ -259,7 +259,7 @@ export function Profile() {
                     <div className="w-3 h-3 rounded-full bg-gray-300"></div>
                   </div>
                   <p className="text-xs text-muted-foreground mb-1">
-                    2019.08 - 2020.07
+                    2019.08 - 2020.07 (1년)
                   </p>
                   <h4 className="font-bold text-sm mb-1">
                     개방형 검증지원 시스템

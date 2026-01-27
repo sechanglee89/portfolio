@@ -14,7 +14,7 @@ export function PrintProjectGreen() {
           <div className="flex gap-2 mb-2">
             <span className="print-badge print-badge-green">Project 02</span>
             <span className="text-[8pt] text-slate-500">
-              진행중 (2025.08 ~ 현재)
+              2025.08 - 2026.01 (6개월)
             </span>
           </div>
           <h3 className="text-[12pt] font-bold mb-1">
