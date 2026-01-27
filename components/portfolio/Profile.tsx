@@ -185,9 +185,7 @@ export function Profile() {
                 <div className="p-4 bg-white dark:bg-gray-800/50 rounded-lg border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow">
                   <div className="flex items-center gap-2 mb-2">
                     <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                    <span className="text-xs text-green-600 dark:text-green-400 font-semibold">
-                      진행중
-                    </span>
+                    <span className="text-xs text-green-600 dark:text-green-400 font-semibold"></span>
                   </div>
                   <p className="text-xs text-muted-foreground mb-1">
                     2025.08 - 2026.01 (6개월)
