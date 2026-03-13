@@ -1,6 +1,6 @@
 # 이세창 포트폴리오
 
-> Java Backend Developer · 경력 7년차 · 이세창의 개인 포트폴리오 웹사이트
+> Java Backend Developer · 경력 8년차 · 이세창의 개인 포트폴리오 웹사이트
 
 [![React](https://img.shields.io/badge/React-18-61DAFB?logo=react)](https://react.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.6-3178C6?logo=typescript)](https://www.typescriptlang.org)

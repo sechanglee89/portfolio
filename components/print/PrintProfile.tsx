@@ -55,7 +55,7 @@ export function PrintProfile() {
       <div className="print-section">
         <div className="text-[9pt] leading-relaxed space-y-2">
           <p>
-            Java/Spring 기반 <strong>백엔드 경력 7년차</strong> 개발자로서, 웹
+            Java/Spring 기반 <strong>백엔드 경력 8년차</strong> 개발자로서, 웹
             서비스의 성능·결제·보안을 중심으로 안정적인 서비스 운영과 아키텍처
             고도화를 담당해 왔습니다.
           </p>

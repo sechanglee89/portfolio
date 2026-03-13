@@ -24,7 +24,7 @@ export function PrintCover() {
         {/* 경력 */}
         <div className="mt-6">
           <span className="print-badge print-badge-primary text-[11pt] px-4 py-1">
-            경력 7년차
+            경력 8년차
           </span>
         </div>
 
