@@ -124,19 +124,6 @@ export function PrintProfile() {
         <div className="print-grid-2">
           <div className="print-card">
             <div className="flex items-center gap-2 mb-1">
-              <span className="text-[8pt] text-slate-500">
-                2025.08 - 2026.01
-              </span>
-            </div>
-            <div className="font-semibold text-[9pt]">
-              한국그린전력 홈페이지 리뉴얼
-            </div>
-            <p className="text-[8pt] text-slate-600">
-              백엔드·관리자 시스템 단독 설계·개발
-            </p>
-          </div>
-          <div className="print-card">
-            <div className="flex items-center gap-2 mb-1">
               <span className="print-badge print-badge-primary font-semibold">
                 메인 프로젝트
               </span>
@@ -149,6 +136,19 @@ export function PrintProfile() {
             </div>
             <p className="text-[8pt] text-slate-600">
               서비스 백엔드 주도 개발·운영
+            </p>
+          </div>
+          <div className="print-card">
+            <div className="flex items-center gap-2 mb-1">
+              <span className="text-[8pt] text-slate-500">
+                2025.08 - 2026.01
+              </span>
+            </div>
+            <div className="font-semibold text-[9pt]">
+              한국그린전력 홈페이지 리뉴얼
+            </div>
+            <p className="text-[8pt] text-slate-600">
+              백엔드·관리자 시스템 단독 설계·개발
             </p>
           </div>
           <div className="print-card">

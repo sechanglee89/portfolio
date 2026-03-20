@@ -180,29 +180,6 @@ export function Profile() {
           <div className="relative">
             {/* 타임라인 항목들 */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-              {/* 한국그린전력 */}
-              <div className="relative">
-                <div className="p-4 bg-white dark:bg-gray-800/50 rounded-lg border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow">
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                    <span className="text-xs text-green-600 dark:text-green-400 font-semibold"></span>
-                  </div>
-                  <p className="text-xs text-muted-foreground mb-1">
-                    2025.08 - 2026.01 (6개월)
-                  </p>
-                  <h4 className="font-bold text-sm mb-1">
-                    한국그린전력 홈페이지 리뉴얼
-                  </h4>
-                  <p className="text-xs text-muted-foreground">
-                    한국그린전력 | 백엔드·관리자 시스템 단독 설계·개발
-                  </p>
-                  <p className="text-xs text-blue-600 dark:text-blue-400 mt-2">
-                    기존 PHP 홈페이지를 Kotlin/Spring Boot·AWS 기반으로
-                    재구축하며, 사용자·관리자 백엔드와 MFA 보안을 단독 설계
-                  </p>
-                </div>
-              </div>
-
               {/* 블라이스 */}
               <div className="relative">
                 <div className="p-4 bg-white dark:bg-gray-800/50 rounded-lg border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow">
@@ -224,6 +201,29 @@ export function Profile() {
                   <p className="text-xs text-blue-600 dark:text-blue-400 mt-2">
                     메인 응답속도 5~6배 개선과 정기·인앱 결제·이벤트 백엔드 신규
                     구축으로 서비스 성능·매출 기여
+                  </p>
+                </div>
+              </div>
+
+              {/* 한국그린전력 */}
+              <div className="relative">
+                <div className="p-4 bg-white dark:bg-gray-800/50 rounded-lg border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                    <span className="text-xs text-green-600 dark:text-green-400 font-semibold"></span>
+                  </div>
+                  <p className="text-xs text-muted-foreground mb-1">
+                    2025.08 - 2026.01 (6개월)
+                  </p>
+                  <h4 className="font-bold text-sm mb-1">
+                    한국그린전력 홈페이지 리뉴얼
+                  </h4>
+                  <p className="text-xs text-muted-foreground">
+                    한국그린전력 | 백엔드·관리자 시스템 단독 설계·개발
+                  </p>
+                  <p className="text-xs text-blue-600 dark:text-blue-400 mt-2">
+                    기존 PHP 홈페이지를 Kotlin/Spring Boot·AWS 기반으로
+                    재구축하며, 사용자·관리자 백엔드와 MFA 보안을 단독 설계
                   </p>
                 </div>
               </div>
